@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap');
+
+:root {
+  /* Font Sizes */
+  --title-size: 28px; /* Title size for headers */
+  --medium-size: 20px; /* Medium size for regular text */
+  --small-size: 16px; /* Small size for less important text */
+
+  /* Colors */
+  --primary-color: #EEEEEE; 
+  --secondary-color: #76ABAE;
+  --tertiary-color: #31363F; 
+  --background-color: #222831;
+
+  /* Font Family */
+  --main-font: 'Bubblegum Sans', cursive;
+
+  /* New color definitions for placeholders */
+  --bankroll-color: #B4D4FF; /* Green for bankroll */
+  --action-color: #DDE6ED; /* Red for action */
+  --timer-color: #F8E559; /* Yellow for timer */
+}
+
+.App {
+  font-family: var(--main-font);
+  background-color: var(--background-color); /* A light cold blue background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden; /* Prevents scrollbars if the table is large */
+}
+
+.table-page {
+  position: relative;
+  width: 100vw; /* Takes full viewport width */
+  height: 100vh; /* Takes full viewport height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.poker-table {
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Centers the content vertically */
+  width: 75%; /* Ensures the container takes the full width of its parent */
+  height: 75%; /* Ensures the container takes the full height of its parent */
+  position: relative;
+}
+
+.table-image {
+  width: 85%; /* Takes the full width of .poker-table */
+  height: auto; /* Maintains aspect ratio */
+}
+
+.community-cards {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  top: 50%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+}
+
+
+.pot {
+  font-size: var(--medium-size);
+  color: var(--primary-color);
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.player-info {
+  width: 7vw; /* 10% of the viewport width */
+  text-align: center;
+  position: absolute; /* Positioning adjusted in the React component */
+  transform: translate(-50%, -50%); /* Centering the div */
+  font-family: var(--main-font); /* Using the custom font family */
+  color: var(--secondary-color); /* Default text color */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.player-info .cards {
+  order: 1;
+  display: flex; /* Aligns the cards horizontally */
+  flex-direction: row;
+  justify-content: flex-start; /* Centers cards horizontally */
+  gap: 0px;
+}
+
+.player-info .card {
+  flex: 0 0 auto;
+  display: block;
+  margin: 0px; /* Space between the cards */
+}
+.player-info .card-image {
+  width: 5vw; 
+  height: auto;
+}
+
+
+.player-info .username {
+  order: 2;
+  font-size: var(--medium-size); /* Medium size for usernames */
+  color: var(--primary-color); /* Primary color for emphasis */
+  width: 100%;
+  text-align: center;
+}
+
+.player-info .bankroll, .player-info .action, .player-info .timer {
+  order: 3;
+  font-size: var(--small-size); /* Smaller font size for details */
+  color: var(--tertiary-color);
+  padding: 3px;
+  border-radius: 15px;
+  width: 100%; 
+}
+
+.player-info .timer {
+  background-color: var(--timer-color);
+}
+
+.player-info.inactive .username {
+  opacity: 0.3; 
+}
+
+.player-info .bankroll {
+  background-color: var(--bankroll-color);
+}
+
+.player-info .action {
+  background-color: var(--action-color);
+}
+
+.card-image {
+  width: 7vw; 
+  height: auto;
+}
+
+.title {
+  font-size: var(--title-size);
+  color: var(--primary-color);
+}
+
+.text {
+  font-size: var(--medium-size);
+  color: var(--secondary-color);
+}

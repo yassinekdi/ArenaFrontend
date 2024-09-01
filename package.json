@@ -37,6 +37,8 @@
     ]
   },
   "devDependencies": {
+    "url-loader": "^4.1.1",
+    "@craco/craco": "^7.1.0",
     "@svgr/webpack": "^8.1.0"
   }
 }
